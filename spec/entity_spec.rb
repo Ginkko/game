@@ -15,6 +15,7 @@ describe Entity do
       expect(player.damage).to eq(5)
     end
   end
+
   describe '#move_north' do
     it 'moves an entity one spot north' do
       player = Entity.create(name: 'Dirge', level: 1, health: 100, location_x: 1, location_y: 1, pc?: true, alive?: true)
@@ -23,4 +24,11 @@ describe Entity do
     end
   end
 
+  describe '#move_east' do
+    it 'moves an entity one spot east' do
+      player = Entity.create(name: 'Dirge', level: 1, health: 100, location_x: 1, location_y: 1, pc?: true, alive?: true)
+      player.move_east
+      expect(player.location_x).to eq(2)
+    end
+  end
 end
